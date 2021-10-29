@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue#2</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{ message }}, {{ name }}. Age: {{ age }}
+      <hr />
+      <input type="text" v-model="name" />
+      <hr />
+      <button @click="decrement">-</button>
+      <button @click="increment">+</button>
+    </div>
+    <script>
+      Vue.component("todo-item", {
+        template: "<li>This is a todo</li>",
+      });
+
+      var app = new Vue({
+        el: "#app",
+        data: {
+          message: "Hello",
+          name: "Shaxzodbek",
+          age: 0,
+        },
+        methods: {
+          increment() {
+            this.age++;
+          },
+          decrement() {
+            this.age--;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
